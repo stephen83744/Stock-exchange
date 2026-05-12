@@ -16,6 +16,8 @@ const LoginPage: React.FC = () => {
     const [message, setMessage] = useState("");
     const navigate = useNavigate();
     const [showPassword, setShowPassword] = useState(false);
+    
+
 
 
      const retrieve = (): User[] =>{
@@ -54,6 +56,19 @@ setMessage("")
         <div className=" w-full w-md rounded-2xl p-8 shadow-xl bg-white">
       <h2 className="text-center font-bold text-2xl text-gray-700 mb-1">Welcome to AlphaRise</h2>
       <p className="text-center  text-gray-700 mb-6"> Please enter your Email and password </p>
+
+     <div className="flex bg-gray-100 p-1 rounded-lg mb-9">
+          <div className="flex-1 py-2 text-center text-sm font-semibold text-gray-900 bg-white rounded-md shadow-sm">
+            Sign In
+          </div>
+          <button
+            onClick={() => navigate("/signup")}
+            className="flex-1 py-2 text-center text-sm font-medium text-gray-500 hover:text-gray-700 cursor-pointer"
+          >
+            Sign Up
+          </button>
+        </div>
+
          {error && <div className="mb-6 p-3 rounded-lg text-sm text-center bg-red-100 text-red-700">{error}</div>}
           {message && <div className="mb-6 p-3 rounded-lg text-sm text-center bg-green-100 text-green-700">{message}</div>}
 
@@ -71,7 +86,7 @@ setMessage("")
         </div>
         <div className="relative">
           <label htmlFor="Password">Password</label><br></br>
-          <input type= {showPassword ? "text" : "password"}
+          <input type= {showPassword ? "text": "password"}
           id="Passwordx"
           value={password}
            className="mb-6 w-full rounded-lg border border-gray-300 p-2"
@@ -83,7 +98,7 @@ setMessage("")
               onClick={() => setShowPassword(!showPassword)}
               className="absolute right-3 top-[38px] text-gray-500"
             >
-              {showPassword ?    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
+              {showPassword?    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" />
                   <path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                 </svg> 
