@@ -11,7 +11,7 @@ const STORAGE_KEY = "logindata";
 
 const SignUp: React.FC = () => {
   const navigate = useNavigate();
-
+  
   const [error, setError] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -71,15 +71,28 @@ const SignUp: React.FC = () => {
     setError("");
 
     setTimeout(() => {
-      navigate("/loginPage");
+      navigate("/market");
     }, 2000);
   };
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-100">
+      
       <div className="w-full w-md rounded-2xl p-8 shadow-xl bg-white"> 
         <h2 className="text-center text-2xl font-bold text-gray-800 mb-1">Welcome to Alpha Rise</h2>
         <p className="text-center text-gray-600 mb-6">Please sign up to continue</p>
+
+         <div className="flex bg-gray-100 p-1 rounded-lg mb-6">
+          <button 
+           onClick={() => navigate("/")}
+          className="flex-1 py-2 text-center text-sm font-medium text-gray-500 hover:text-gray-700 cursor-pointer">
+            Sign In
+          </button>
+          <div className="flex-1 py-2 text-center text-sm font-semibold text-gray-900 bg-white rounded-md shadow-sm cursor-pointer"
+          >
+            Sign Up
+          </div>
+        </div>
 
         <form id="form" onSubmit={handleSubmit}>
           <div className="form">
